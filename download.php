@@ -4,7 +4,7 @@
   $base_website = "https://www.foodnetwork.com/recipes/recipes-a-z/123";
   $folder = './';
 
-  if(!$paging_index = file_get_contents($folder."/index-pagination")) {
+  if($paging_index = file_get_contents($folder."/index-pagination")) {
     $food_network = file_get_contents($base_website);
     $index = null;
     preg_match_all('/(?<=<li class="o-IndexPagination__a-ListItem">).*(?=<\/li>)/im', $food_network, $index);
